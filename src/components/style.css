@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+  /* padding: 20px; */
+  margin-top: 10px;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+th {
+  background-color: #f4f4f4;
+}
