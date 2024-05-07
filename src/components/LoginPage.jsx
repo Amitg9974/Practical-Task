@@ -11,8 +11,7 @@ function LoginPage() {
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
 
-
-// Store Form data on state
+  // Store Form data on state
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -65,7 +64,7 @@ function LoginPage() {
 
     // Fetch Post api url and store auth_token in localStorage
     try {
-      const response = await fetch("http://122.170.12.63:90/api/auth/login", {
+      const response = await fetch(process.env.REACT_APP_LOGIN_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

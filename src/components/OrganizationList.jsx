@@ -16,12 +16,9 @@ function OrganizationListComp() {
     // fetch API for get organization list
     const fetchOrganizations = async () => {
       try {
-        const response = await fetch(
-          "http://122.170.12.63:90/api/Organization/getAllOrganization",
-          {
-            headers: { Authorization: token },
-          }
-        );
+        const response = await fetch(process.env.REACT_APP_ORGANIZATION_LIST_URL, {
+          headers: { Authorization: token },
+        });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

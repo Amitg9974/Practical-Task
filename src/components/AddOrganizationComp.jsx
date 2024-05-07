@@ -68,17 +68,14 @@ function AddOrganizationComp() {
 
     // Fetch API
     try {
-      const response = await fetch(
-        "http://122.170.12.63:90/api/Organization/addOrganization",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify(organizationDetails),
-        }
-      );
+      const response = await fetch(process.env.REACT_APP_ADD_ORGANIZATION_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(organizationDetails),
+      });
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
